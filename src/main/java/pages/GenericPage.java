@@ -68,4 +68,25 @@ public class GenericPage extends DriverManager{
 	public boolean verifierTitrePage (String titrePageAttendu) {
 		return ( titrePageAttendu == titrePage);
 	}
+	
+	//fonctions navigation
+	public void ouvrirSite() {
+		driver.get(urlSite);
+	}
+	
+	public void allerALaPageDuProduit(String menuChoisi, String ProduitChoisi) {
+		
+		allerALaPageDuProduit(menuChoisi,"",ProduitChoisi);
+	}
+	
+	public void allerALaPageDuProduit(String menuChoisi, String sousMenuChoisi,String ProduitChoisi) {
+		
+		ouvrirSite();
+		cliquerElementMenu(menuChoisi);
+		if (sousMenuChoisi != "") {
+			PageAccueil pAccueil = new PageAccueil();
+			pAccueil.cliquerElementSousMenu(ProduitChoisi);
+		}
+		
+	}
 }
