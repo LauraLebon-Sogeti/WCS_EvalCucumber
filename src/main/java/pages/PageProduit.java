@@ -7,6 +7,7 @@ public class PageProduit extends GenericPage{
 	
 	public By prixProduit = By.xpath("//div[@class='prices']/div[@class='product-price']/span");
 	public By ancienPrixProduit = By.xpath("//div[@class='prices']/div[@class='old-product-price']/span");
+	public By btnAjoutPanier ;
 	
 	//récupération nom produit pour vérif titre
 	public String getNomProduit() {
@@ -18,8 +19,10 @@ public class PageProduit extends GenericPage{
 	}
 	
 	// fonctions verification
-	public boolean verifierTitrePageProduit() {
-		return verifierTitrePage(debutTitrePages + nomProduit);
+	public boolean verifierTitrePageProduit(String nomProduitChoisi) {
+		System.out.println(debutTitrePages + nomProduitChoisi);
+		System.out.println(driver.getTitle());
+		return verifierTitrePage(debutTitrePages + nomProduitChoisi);
 	}
 	
 	//fonctions recuperation
@@ -39,5 +42,9 @@ public class PageProduit extends GenericPage{
 		catch (NumberFormatException e) {
 			return 0.0;
 		}
+	}
+	
+	public void cliquerAjouterAuPanier() {
+		driver.findElement(btnAjoutPanier).click();
 	}
 }

@@ -66,7 +66,7 @@ public class GenericPage extends DriverManager{
 	}
 		
 	public boolean verifierTitrePage (String titrePageAttendu) {
-		return ( titrePageAttendu == titrePage);
+		return ( titrePageAttendu.equals(titrePage));
 	}
 	
 	//fonctions navigation

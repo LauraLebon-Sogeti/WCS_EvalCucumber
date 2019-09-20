@@ -9,7 +9,7 @@ public class DriverManager {
 	public static WebDriver driver;
 	public static String urlSite = "http://demowebshop.tricentis.com";
 	
-	public WebDriver OuvrirNavigateur(String nomDriver){
+	public  static WebDriver OuvrirNavigateur(String nomDriver){
 		if (nomDriver == "chrome") {
 			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\chromedriver.exe");
 			driver = new ChromeDriver();
