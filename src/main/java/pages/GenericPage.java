@@ -80,6 +80,7 @@ public class GenericPage extends DriverManager{
 	}
 	
 	public void allerALaPageDuProduit(String menuChoisi, String sousMenuChoisi,String ProduitChoisi) {
+		PageListeProduits pListeProduits = new PageListeProduits();
 		
 		ouvrirSite();
 		cliquerElementMenu(menuChoisi);
@@ -87,6 +88,6 @@ public class GenericPage extends DriverManager{
 			PageAccueil pAccueil = new PageAccueil();
 			pAccueil.cliquerElementSousMenu(ProduitChoisi);
 		}
-		
+		pListeProduits.cliquerNomProduit(ProduitChoisi);
 	}
 }
