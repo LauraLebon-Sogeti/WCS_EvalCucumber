@@ -7,7 +7,8 @@ public class PageProduit extends GenericPage{
 	
 	public By prixProduit = By.xpath("//div[@class='prices']/div[@class='product-price']/span");
 	public By ancienPrixProduit = By.xpath("//div[@class='prices']/div[@class='old-product-price']/span");
-	public By btnAjoutPanier ;
+	public By btnAjoutPanier=By.xpath("//div[@class='overview']//input[@value='Add to cart']") ;
+	public By quantiteProduit=By.xpath("//input[@class='qty-input valid']") ;
 	
 	//récupération nom produit pour vérif titre
 	public String getNomProduit() {
@@ -46,5 +47,9 @@ public class PageProduit extends GenericPage{
 	
 	public void cliquerAjouterAuPanier() {
 		driver.findElement(btnAjoutPanier).click();
+	}
+	
+	public int recupererQuantite() {
+		return Integer.parseInt(driver.findElement(quantiteProduit).getText());
 	}
 }

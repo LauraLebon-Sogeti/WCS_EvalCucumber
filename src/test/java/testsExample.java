@@ -28,12 +28,15 @@ public class testsExample{
 		
 		double prixSurPageProduit = pProduit.recupererValeurPrixProduit();
 		double ancienPrixSurPageProduit = pProduit.recupererValeurAncienPrixProduit();
+		int quantite = pProduit.recupererQuantite();
 		pProduit.cliquerAjouterAuPanier();
 		pProduit.cliquerPanier();
 		
-		
 		PagePanier pPanier = new PagePanier(); 
 		assertTrue(pPanier.verifierTitrePagePanier(), "La page panier est bien affichée");
+		int quantitePanier = pPanier.recupereQuantiteProduit(nomProduit);
+		double prixPanier = pPanier.recupererPrixProduit(nomProduit);
+		assertTrue(pPanier.verifierPresenceDansPanier(nomProduit));
 	}
 
 }
